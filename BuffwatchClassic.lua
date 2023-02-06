@@ -6,6 +6,9 @@
 -- 2.00
 -- Initial version with TOC update for TBC Classic
 -- Updated SpellRanks
+--
+-- 2.01
+-- Fixed backdrops & border
 
 -- ****************************************************************************
 -- **                                                                        **
@@ -18,8 +21,8 @@ local addonName, BUFFWATCHADDON = ...;
 BUFFWATCHADDON_G = { };
 
 BUFFWATCHADDON.NAME = "Buffwatch Classic";
-BUFFWATCHADDON.VERSION = "2.00b1";
-BUFFWATCHADDON.RELEASE_DATE = "25 Apr 2021";
+BUFFWATCHADDON.VERSION = "2.01";
+BUFFWATCHADDON.RELEASE_DATE = "20 May 2021";
 BUFFWATCHADDON.HELPFRAMENAME = "Buffwatch Help";
 BUFFWATCHADDON.MODE_DROPDOWN_LIST = {
     "Solo",
@@ -75,6 +78,16 @@ BUFFWATCHADDON.PLAYER_DEFAULTS = {
     Version                 = BUFFWATCHADDON.VERSION,
     Visible                 = true,
     WindowLocked            = false
+};
+
+BUFFWATCHADDON_G.BACKDROPSTYLE = {
+	bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background",
+	edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
+	tile = true,
+	tileEdge = true,
+	tileSize = 12,
+	edgeSize = 12,
+	insets = { left = 2, right = 2, top = 2, bottom = 2 },
 };
 
 local grouptype;                -- solo, raid or party
