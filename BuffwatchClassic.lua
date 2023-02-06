@@ -3,12 +3,10 @@
 
 -- Changes
 --
--- 2.00
--- Initial version with TOC update for TBC Classic
--- Updated SpellRanks
---
--- 2.01
--- Fixed backdrops & border
+-- 3.00
+-- Initial version with TOC update for WotLK Classic
+-- Updated spell ranks
+-- Fixed slider display in options
 
 -- ****************************************************************************
 -- **                                                                        **
@@ -21,8 +19,8 @@ local addonName, BUFFWATCHADDON = ...;
 BUFFWATCHADDON_G = { };
 
 BUFFWATCHADDON.NAME = "Buffwatch Classic";
-BUFFWATCHADDON.VERSION = "2.01";
-BUFFWATCHADDON.RELEASE_DATE = "20 May 2021";
+BUFFWATCHADDON.VERSION = "3.00";
+BUFFWATCHADDON.RELEASE_DATE = "12 Sep 2022";
 BUFFWATCHADDON.HELPFRAMENAME = "Buffwatch Help";
 BUFFWATCHADDON.MODE_DROPDOWN_LIST = {
     "Solo",
