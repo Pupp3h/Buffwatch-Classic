@@ -3,71 +3,9 @@
 
 -- Changes
 --
--- 1.00 Initial version for Classic based on Buffwatch++ v8.11
-
--- 1.01
--- Fixed checking missing buff events after combat
--- Fixed loading options on login/reload
-
--- 1.02
--- Optimisation when checking buffs
--- Fixed toggling Hide cooldown text when OmniCC is installed
-
--- 1.03
--- Hotfix for buff frames not hiding correctly
-
--- 1.04
--- Fixed UnitBuff filtering that was removed in retail v4.03
---  (Some buffs that were incorrectly shown with 'Show only castable buffs'
---   will no longer show with this option selected)
--- Added caster name to tooltips
--- Optimisations for checking locked buffs and when looking for group buffs
--- Added special rules for buffs that should only match to the original caster
-
--- 1.05
--- Added support for LibClassicDurations, to show cooldown spirals for all
-
--- 1.06
--- Added check to only load LibClassicDurations version 1.8 or newer
-
--- 1.07
--- Added checking for Temporary Weapon Enchants
--- Added group buffs for Intellect, Fortitude, Spirit, MotW, Shadow Prot,
---  Might, Wisdom, Salvation, Kings, Light & Sanctuary
-
--- 1.08
--- Fixed temp enchant alignment when player has no normal buffs
--- Fixed alt-rightclick error on another player when we have temp enchant
-
--- 1.09
--- Added support for buff ranks
-
--- 1.10
--- Fixed issue with buff rank localization
--- Fixed buff names for Flasks & Elixirs
-
--- 1.11
--- Changed method for buff rank localization as rank information wasn't always
---  returned by the api and was getting lost at initial login
--- Buff ranks are enabled for locales: enUS, enGB, deDE, esES, esMX, frFR,
---  ptBR and ruRU
--- Other localizations will always cast max rank until they can be added
-
--- 1.12
--- Persist visible state between logins
--- Added checkbox to hide or show Buffwatch in options panel
-
--- 1.13
--- ToC update
-
--- 1.14
--- Fixed potential sort error when player has temporary enchants
-
--- 1.15
--- ToC update
-
--- 1.16
--- Fixed Window sizing with Hide Unmonitored and player has temporary enchant
+-- 2.00
+-- Initial version with TOC update for TBC Classic
+-- Updated SpellRanks
 
 -- ****************************************************************************
 -- **                                                                        **
@@ -80,8 +18,8 @@ local addonName, BUFFWATCHADDON = ...;
 BUFFWATCHADDON_G = { };
 
 BUFFWATCHADDON.NAME = "Buffwatch Classic";
-BUFFWATCHADDON.VERSION = "1.16";
-BUFFWATCHADDON.RELEASE_DATE = "31 Oct 2020";
+BUFFWATCHADDON.VERSION = "2.00b1";
+BUFFWATCHADDON.RELEASE_DATE = "25 Apr 2021";
 BUFFWATCHADDON.HELPFRAMENAME = "Buffwatch Help";
 BUFFWATCHADDON.MODE_DROPDOWN_LIST = {
     "Solo",
