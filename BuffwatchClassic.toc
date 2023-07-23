@@ -1,7 +1,7 @@
-## Interface: 30401
+## Interface: 30402
 ## Title: Buffwatch Classic
 ## Author: Pup
-## Version: 3.01
+## Version: 3.02
 ## Notes: Monitors Player/Party/Raid buffs of your choosing
 ## OptionalDeps: LibClassicDurations
 ## SavedVariables: BuffwatchConfig

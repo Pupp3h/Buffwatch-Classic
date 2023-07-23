@@ -11,6 +11,10 @@
 -- 3.01
 -- Updated ToC
 
+-- 3.02
+-- Updated ToC
+-- Updated spell ranks
+
 -- ****************************************************************************
 -- **                                                                        **
 -- **  Variables                                                             **
@@ -22,8 +26,8 @@ local addonName, BUFFWATCHADDON = ...;
 BUFFWATCHADDON_G = { };
 
 BUFFWATCHADDON.NAME = "Buffwatch Classic";
-BUFFWATCHADDON.VERSION = "3.01";
-BUFFWATCHADDON.RELEASE_DATE = "27 Mar 2023";
+BUFFWATCHADDON.VERSION = "3.02";
+BUFFWATCHADDON.RELEASE_DATE = "23 Jul 2023";
 BUFFWATCHADDON.HELPFRAMENAME = "Buffwatch Help";
 BUFFWATCHADDON.MODE_DROPDOWN_LIST = {
     "Solo",
