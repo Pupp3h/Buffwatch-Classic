@@ -7,6 +7,9 @@
 -- Initial version with TOC update for Cataclysm Classic
 -- Removed spell ranks
 
+-- 4.01
+-- Updated buff groupings
+
 -- ****************************************************************************
 -- **                                                                        **
 -- **  Variables                                                             **
@@ -18,8 +21,8 @@ local addonName, BUFFWATCHADDON = ...;
 BUFFWATCHADDON_G = { };
 
 BUFFWATCHADDON.NAME = "Buffwatch Classic";
-BUFFWATCHADDON.VERSION = "4.00";
-BUFFWATCHADDON.RELEASE_DATE = "23 May 2024";
+BUFFWATCHADDON.VERSION = "4.01";
+BUFFWATCHADDON.RELEASE_DATE = "26 May 2024";
 BUFFWATCHADDON.HELPFRAMENAME = "Buffwatch Help";
 BUFFWATCHADDON.MODE_DROPDOWN_LIST = {
     "Solo",
@@ -160,69 +163,126 @@ function BUFFWATCHADDON_G.OnLoad(self)
     GroupBuffs.Buff = { };
     GroupBuffs.GroupName = { };
 
-    GroupBuffs.GroupName[1] = "Mage Armor";
-    GroupBuffs.Buff["Mage Armor"] = 1;
-    GroupBuffs.Buff["Frost Armor"] = 1;
-    GroupBuffs.Buff["Ice Armor"] = 1;
+    GroupBuffs.GroupName[1] = "Agility and Strength";
+    GroupBuffs.Buff["Battle Shout"] = 1;
+    GroupBuffs.Buff["Horn of Winter"] = 1;
+    GroupBuffs.Buff["Roar of Courage"] = 1;
+    GroupBuffs.Buff["Strength of Earth"] = 1;
 
-    GroupBuffs.GroupName[2] = "Intellect";
-    GroupBuffs.Buff["Arcane Intellect"] = 2;
-    GroupBuffs.Buff["Arcane Brilliance"] = 2;
+    GroupBuffs.GroupName[2] = "Armor";
+    GroupBuffs.Buff["Devotion Aura"] = 2;
+    GroupBuffs.Buff["Stoneskin"] = 2;
 
-    GroupBuffs.GroupName[3] = "Fortitude";
-    GroupBuffs.Buff["Power Word: Fortitude"] = 3;
-    GroupBuffs.Buff["Prayer of Fortitude"] = 3;
+    GroupBuffs.GroupName[3] = "Attack Power";
+    GroupBuffs.Buff["Abomination's Might"] = 3;
+    GroupBuffs.Buff["Blessing of Might"] = 3;
+    GroupBuffs.Buff["Trueshot Aura"] = 3;
+    GroupBuffs.Buff["Unleashed Rage"] = 3;
 
-    GroupBuffs.GroupName[4] = "Spirit";
-    GroupBuffs.Buff["Divine Spirit"] = 4;
-    GroupBuffs.Buff["Prayer of Spirit"] = 4;
+    GroupBuffs.GroupName[4] = "Bloodlust / Heroism";
+    GroupBuffs.Buff["Primal Rage"] = 4;
+    GroupBuffs.Buff["Bloodlust"] = 4;
+    GroupBuffs.Buff["Heroism"] = 4;
+    GroupBuffs.Buff["Time Warp"] = 4;
 
-    GroupBuffs.GroupName[5] = "Mark of the Wild";
-    GroupBuffs.Buff["Mark of the Wild"] = 5;
-    GroupBuffs.Buff["Gift of the Wild"] = 5;
+    GroupBuffs.GroupName[5] = "Crit Chance";
+    GroupBuffs.Buff["Elemental Oath"] = 5;
+    GroupBuffs.Buff["Honor Among Thieves"] = 5;
+    GroupBuffs.Buff["Leader of the Pack"] = 5;
+    GroupBuffs.Buff["Rampage"] = 5;
+    GroupBuffs.Buff["Furious Howl"] = 5;
+    GroupBuffs.Buff["Terrifying Roar"] = 5;
 
-    GroupBuffs.GroupName[6] = "Shadow Protection";
-    GroupBuffs.Buff["Shadow Protection"] = 6;
-    GroupBuffs.Buff["Prayer of Shadow Protection"] = 6;
+    GroupBuffs.GroupName[6] = "Damage Increase";
+    GroupBuffs.Buff["Arcane Tactics"] = 6;
+    GroupBuffs.Buff["Ferocious Inspiration"] = 6;
 
-    GroupBuffs.GroupName[7] = "Might";
-    GroupBuffs.Buff["Blessing of Might"] = 7;
-    GroupBuffs.Buff["Greater Blessing of Might"] = 7;
+    GroupBuffs.GroupName[7] = "Mana";
+    GroupBuffs.Buff["Arcane Brilliance"] = 7;
+    GroupBuffs.Buff["Dalaran Brilliance"] = 7;
+    GroupBuffs.Buff["Fel Intelligence"] = 7;
 
-    GroupBuffs.GroupName[8] = "Wisdom";
-    GroupBuffs.Buff["Blessing of Wisdom"] = 8;
-    GroupBuffs.Buff["Greater Blessing of Wisdom"] = 8;
+    GroupBuffs.GroupName[8] = "Melee Haste";
+    GroupBuffs.Buff["Hunting Party"] = 8;
+    GroupBuffs.Buff["Improved Icy Talons"] = 8;
+    GroupBuffs.Buff["Windfury Totem"] = 8;
 
-    GroupBuffs.GroupName[9] = "Salvation";
-    GroupBuffs.Buff["Blessing of Salvation"] = 9;
-    GroupBuffs.Buff["Greater Blessing of Salvation"] = 9;
+    GroupBuffs.GroupName[9] = "Spell Haste";
+    GroupBuffs.Buff["Moonkin Form"] = 9;
+    GroupBuffs.Buff["Mind Quickening"] = 9;
+    GroupBuffs.Buff["Wrath of Air Totem"] = 9;
 
-    GroupBuffs.GroupName[10] = "Kings";
-    GroupBuffs.Buff["Blessing of Kings"] = 10;
-    GroupBuffs.Buff["Greater Blessing of Kings"] = 10;
+    GroupBuffs.GroupName[10] = "Spell Power";
+    GroupBuffs.Buff["Demonic Pact"] = 10;
+    GroupBuffs.Buff["Totemic Wrath"] = 10;
 
-    GroupBuffs.GroupName[11] = "Light";
-    GroupBuffs.Buff["Blessing of Light"] = 11;
-    GroupBuffs.Buff["Greater Blessing of Light"] = 11;
+    GroupBuffs.GroupName[11] = "Stamina";
+    GroupBuffs.Buff["Blood Pact"] = 11;
+    GroupBuffs.Buff["Commanding Shout"] = 11;
+    GroupBuffs.Buff["Power Word: Fortitude"] = 11;
+    GroupBuffs.Buff["Qiraji Fortitude"] = 11;
 
-    GroupBuffs.GroupName[12] = "Sanctuary";
-    GroupBuffs.Buff["Blessing of Sanctuary"] = 12;
-    GroupBuffs.Buff["Greater Blessing of Sanctuary"] = 12;
+    GroupBuffs.GroupName[12] = "Stats";
+    GroupBuffs.Buff["Blessing of Kings"] = 12;
+    GroupBuffs.Buff["Embrace of the Shale Spider"] = 12;
+    GroupBuffs.Buff["Mark of the Wild"] = 12;
 
-    GroupBuffs.GroupName[13] = "Flasks";
-    GroupBuffs.Buff["Supreme Power"] = 13;
-    GroupBuffs.Buff["Flask of the Titans"] = 13;
-    GroupBuffs.Buff["Distilled Wisdom"] = 13;
-    GroupBuffs.Buff["Chromatic Resistance"] = 13;
-    GroupBuffs.Buff["Petrification"] = 13;
+    GroupBuffs.GroupName[13] = "Mage Armor";
+    GroupBuffs.Buff["Mage Armor"] = 13;
+    GroupBuffs.Buff["Frost Armor"] = 13;
+    GroupBuffs.Buff["Molten Armor"] = 13;
 
-    GroupBuffs.GroupName[14] = "Agility Elixirs";
-    GroupBuffs.Buff["Elixir of the Mongoose"] = 14;
-    GroupBuffs.Buff["Greater Agility"] = 14;
+    GroupBuffs.GroupName[14] = "Seals"
+    GroupBuffs.Buff["Seal of Truth"] = 14;
+    GroupBuffs.Buff["Seal of Justice"] = 14;
+    GroupBuffs.Buff["Seal of Insight"] = 14;
+    GroupBuffs.Buff["Seal of Righteousness"] = 14;
 
-    GroupBuffs.GroupName[15] = "Armor Elixirs";
-    GroupBuffs.Buff["Greater Armor"] = 15; -- Elixir of Superior Defense
-    GroupBuffs.Buff["Armor"] = 15; -- Elixir of Greater Defense / Elixir of Defense / Scroll of Protection
+    GroupBuffs.GroupName[15] = "Flasks"
+    GroupBuffs.Buff["Flask of Endless Rage"] = 15;
+    GroupBuffs.Buff["Flask of Pure Mojo"] = 15;
+    GroupBuffs.Buff["Flask of Stoneblood"] = 15;
+    GroupBuffs.Buff["Flask of the Frost Wyrm"] = 15;
+    GroupBuffs.Buff["Flask of Enhancement"] = 15;
+    GroupBuffs.Buff["Flask of Flowing Water"] = 15;
+    GroupBuffs.Buff["Flask of Steelskin"] = 15;
+    GroupBuffs.Buff["Flask of Titanic Strength"] = 15;
+    GroupBuffs.Buff["Flask of the Draconic Mind"] = 15;
+    GroupBuffs.Buff["Flask of the Winds"] = 15;
+
+    -- Lvl80 Battle Elixirs
+    GroupBuffs.GroupName[16] = "Battle Elixirs"
+    GroupBuffs.Buff["Accuracy"] = 16;
+    GroupBuffs.Buff["Armor Piercing"] = 16;
+    GroupBuffs.Buff["Deadly Strikes"] = 16;
+    GroupBuffs.Buff["Expertise"] = 16;
+    GroupBuffs.Buff["Lightning Speed"] = 16;
+    GroupBuffs.Buff["Mighty Agility"] = 16;
+    GroupBuffs.Buff["Mighty Mana Regeneration"] = 16;
+    GroupBuffs.Buff["Mighty Strength"] = 16;
+    GroupBuffs.Buff["Elixir of Spirit"] = 16;
+    GroupBuffs.Buff["Guru's Elixir"] = 16;
+    GroupBuffs.Buff["Spellpower Elixir"] = 16;
+    GroupBuffs.Buff["Wrath Elixir"] = 16;
+
+    -- Lvl85 Battle Elixirs
+    GroupBuffs.Buff["Impossible Accuracy"] = 16;
+    GroupBuffs.Buff["Mighty Speed"] = 16;
+    GroupBuffs.Buff["Elixir of the Cobra"] = 16;
+    GroupBuffs.Buff["Elixir of the Master"] = 16;
+    GroupBuffs.Buff["Elixir of the Naga"] = 16;
+    GroupBuffs.Buff["Ghost Elixir"] = 16;
+
+    -- Lvl80 Guardian Elixirs
+    GroupBuffs.GroupName[17] = "Guardian Elixirs"
+    GroupBuffs.Buff["Mighty Defense"] = 17;
+    GroupBuffs.Buff["Elixir of Mighty Fortitude"] = 17;
+    GroupBuffs.Buff["Mighty Thoughts"] = 17;
+    GroupBuffs.Buff["Protection"] = 17;
+
+    -- Lvl85 Guardian Elixirs
+    GroupBuffs.Buff["Elixir of Deep Earth"] = 17;
+    GroupBuffs.Buff["Prismatic Elixir"] = 17;
 
     GroupBuffs.Group = { };
 
