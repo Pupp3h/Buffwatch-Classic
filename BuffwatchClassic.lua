@@ -10,6 +10,9 @@
 -- 4.01
 -- Updated buff groupings
 
+-- 4.0.2
+-- Fixes to options panel and help text
+
 -- ****************************************************************************
 -- **                                                                        **
 -- **  Variables                                                             **
@@ -21,8 +24,8 @@ local addonName, BUFFWATCHADDON = ...;
 BUFFWATCHADDON_G = { };
 
 BUFFWATCHADDON.NAME = "Buffwatch Classic";
-BUFFWATCHADDON.VERSION = "4.01";
-BUFFWATCHADDON.RELEASE_DATE = "26 May 2024";
+BUFFWATCHADDON.VERSION = "4.02";
+BUFFWATCHADDON.RELEASE_DATE = "28 Sep 2024";
 BUFFWATCHADDON.HELPFRAMENAME = "Buffwatch Help";
 BUFFWATCHADDON.MODE_DROPDOWN_LIST = {
     "Solo",
@@ -2281,17 +2284,13 @@ end
 
 function BUFFWATCHADDON_G.OptionsToggle()
 
-    InterfaceOptionsFrame_OpenToCategory(BUFFWATCHADDON.NAME);
-    -- Used to call twice to get around issue of correct panel not opening on first try, left here in case needed again
-    --InterfaceOptionsFrame_OpenToCategory(BUFFWATCHADDON.NAME);
+    Settings.OpenToCategory(BUFFWATCHADDON.NAME);
 
 end
 
 function BUFFWATCHADDON_G.ShowHelp()
 
-    InterfaceOptionsFrame_OpenToCategory(BUFFWATCHADDON.HELPFRAMENAME);
-    -- Used to call twice to get around issue of correct panel not opening on first try, left here in case needed again
-    --InterfaceOptionsFrame_OpenToCategory(BUFFWATCHADDON.HELPFRAMENAME);
+    Settings.OpenToCategory(BUFFWATCHADDON.HELPFRAMENAME);
 
 end
 
